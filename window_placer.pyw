@@ -1,7 +1,4 @@
 import pygetwindow as gw
-import keyboard
-import re
-import time
 
 
 def resize_discord_chrome():
