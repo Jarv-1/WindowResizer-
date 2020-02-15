@@ -12,8 +12,14 @@ def resize_discord_chrome():
         if "Google Chrome" in window_name:
             target_windows.append(window_name)
             current_window = gw.getWindowsWithTitle(window_name)[0]
-            current_window.resizeTo(1096, 950)
-            current_window.moveTo(-1088, -383)
+
+            if (current_window.top < 0 and current_window.left < 0):
+                if current_window.isMaximized == True:
+                    current_window.minimize()
+
+                current_window.resizeTo(1096, 950)
+                current_window.moveTo(-1088, -383)
+
         elif "Discord" in window_name:
             target_windows.append(window_name)
             current_window = gw.getWindowsWithTitle(window_name)[0]
