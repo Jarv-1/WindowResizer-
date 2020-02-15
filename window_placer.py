@@ -1,4 +1,5 @@
 import pygetwindow as gw
+import keyboard
 import re
 
 
@@ -31,4 +32,9 @@ def resize_discord_chrome():
 
 if __name__ == "__main__":
     print("Hello World")
-    resize_discord_chrome()
+    while True:
+        if keyboard.is_pressed("shift"):
+            if keyboard.is_pressed("cmd"):
+                if keyboard.is_pressed("F8"):
+                    resize_discord_chrome()
+
